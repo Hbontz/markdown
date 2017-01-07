@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700");
+body {
+  background-color: #f4f4f4;
+}
+
+.container {
+  font-family: "Open Sans", sans-serif;
+  font-size: 17px;
+  background-color: #f4f4f4;
+  color: #373737;
+}
+
+.form-control {
+  font-size: 17px;
+  background-color: #373737;
+  color: #f4f4f4;
+}
+
+.header {
+  text-align: center;
+  margin: 4% 0 6% 0;
+  font-weight: bold;
+  font-size: 6vh;
+}

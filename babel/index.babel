@@ -1,0 +1,28 @@
+  var initialInput = '# Headings\n## Get\n### Smaller\n#### And\n##### Smaller\n\nTwo new lines create a paragraph\n\n*italics* like this and _italics_ like this  \n**bold** like this and __bold__ like this  \n~~to strike it~~\n\nDid I mention that two spaces at the end of a line  \ncreate a line break?\n\nShopping list:\n* apples\n* oranges\n* pears\n\nNumbered list:\n5. apples\n2. oranges\n4. pears\n\nSee that, the numbers don\'t matter, and the list is formatted for you.\n\nThanks  *[marked](https://github.com/chjj/marked)*';
+
+class PreviewContainer extends React.Component {
+  constructor() {
+    super();
+    this.state = {input: initialInput}
+    this.handleChange = this.handleChange.bind(this);
+  }
+  handleChange = (e) => 
+    this.setState({
+      input: e.target.value
+    });
+  render() {
+    return (
+      <div className="row">
+        <div className="header">Preview Markdown</div>
+        <div className="col-xs-12 col-sm-6">
+          <textarea className="form-control" rows="31" onChange={this.handleChange}>
+					 {this.state.input}
+          </textarea>
+        </div>
+        <div className="col-xs-12 col-sm-5 col-sm-offset-1" dangerouslySetInnerHTML={{__html: marked(this.state.input)}} />
+      </div>
+		 );
+  }
+}
+
+ReactDOM.render(<PreviewContainer />, document.getElementById('displayPreviewer'));
